@@ -1,0 +1,358 @@
+[
+    {
+        "id": "0bdaf2b4c6036f6e",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "6772e57e0cde0a28",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "7a21a1ffd7f471ba",
+        "type": "ui_group",
+        "name": "TEST STT ",
+        "tab": "ae41e95b6a27ea8c",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "ae41e95b6a27ea8c",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "9badf514cd4dbf69",
+        "type": "serial-port",
+        "serialport": "/dev/tty.usbmodem21101",
+        "serialbaud": "9600",
+        "databits": "8",
+        "parity": "none",
+        "stopbits": "1",
+        "waitfor": "",
+        "dtr": "none",
+        "rts": "none",
+        "cts": "none",
+        "dsr": "none",
+        "newline": "\\n",
+        "bin": "false",
+        "out": "char",
+        "addchar": "",
+        "responsetimeout": "10000"
+    },
+    {
+        "id": "b4275a58c8658c4f",
+        "type": "speech-to-text-ubos",
+        "z": "0bdaf2b4c6036f6e",
+        "name": "",
+        "OPENAI_API_KEY": "",
+        "prompt": "Recieve a norwegian first name, in norwegian speech, as an audio file. Reurn only the first name spoken.",
+        "actionType": "transcriptions",
+        "x": 620,
+        "y": 440,
+        "wires": [
+            [
+                "e9fe65af761f0c75",
+                "669a84b8632980e6"
+            ]
+        ]
+    },
+    {
+        "id": "5233277a2e76f7cb",
+        "type": "ui_microphone",
+        "z": "0bdaf2b4c6036f6e",
+        "name": "SNAKK HER",
+        "group": "7a21a1ffd7f471ba",
+        "order": 0,
+        "width": "4",
+        "height": "4",
+        "maxLength": 5,
+        "maxRecogLength": 5,
+        "timeslice": 0,
+        "press": "click",
+        "mode": "audio",
+        "interimResults": false,
+        "x": 170,
+        "y": 380,
+        "wires": [
+            [
+                "bacd484c8d4d4953"
+            ]
+        ]
+    },
+    {
+        "id": "e9fe65af761f0c75",
+        "type": "debug",
+        "z": "0bdaf2b4c6036f6e",
+        "name": "Navn fra gippity",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 840,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "bacd484c8d4d4953",
+        "type": "function",
+        "z": "0bdaf2b4c6036f6e",
+        "name": "Prepare speect object",
+        "func": "const a = {\n    file:{\n        value: msg.payload,\n        options: {\n            filename: \"test.wav\"\n        }\n    },\n    language: \"no\",\n    temperature: 0\n}\nreturn a;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 400,
+        "wires": [
+            [
+                "b4275a58c8658c4f"
+            ]
+        ]
+    },
+    {
+        "id": "753e931842566882",
+        "type": "http request",
+        "z": "0bdaf2b4c6036f6e",
+        "name": "",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "query",
+        "url": "https://www.ssb.no/befolkning/navn/statistikk/navn/_/service/mimir/nameSearch?name={{{navn}}}",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 430,
+        "y": 500,
+        "wires": [
+            [
+                "cc86b951dda699a8",
+                "12326d600d10093f"
+            ]
+        ]
+    },
+    {
+        "id": "669a84b8632980e6",
+        "type": "function",
+        "z": "0bdaf2b4c6036f6e",
+        "name": "Navn fra gpt",
+        "func": "const name = msg.payload.text\n// const param = \"navn=\" + name;\n\nreturn {\n    navn: name\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 230,
+        "y": 500,
+        "wires": [
+            [
+                "753e931842566882"
+            ]
+        ]
+    },
+    {
+        "id": "cc86b951dda699a8",
+        "type": "debug",
+        "z": "0bdaf2b4c6036f6e",
+        "name": "Resultat fra namesearch",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 870,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "12326d600d10093f",
+        "type": "function",
+        "z": "0bdaf2b4c6036f6e",
+        "name": "Navn fra ssb",
+        "func": "const firstgiven = msg.payload.response.docs.find((name) => name.type == \"firstgiven\")\nreturn firstgiven ? {payload: `${firstgiven.count} heter ${firstgiven.name}`} : {payload: \"error!\"}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 510,
+        "y": 560,
+        "wires": [
+            [
+                "bf6417b62d245a04",
+                "5f7c871cef7f32bb"
+            ]
+        ]
+    },
+    {
+        "id": "bf6417b62d245a04",
+        "type": "debug",
+        "z": "0bdaf2b4c6036f6e",
+        "name": "Verdi til arduino",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 840,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "81fbd1766e4fb48f",
+        "type": "change",
+        "z": "0bdaf2b4c6036f6e",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "abc123",
+                "tot": "str",
+                "dc": true
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1140,
+        "y": 820,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5f7c871cef7f32bb",
+        "type": "serial out",
+        "z": "0bdaf2b4c6036f6e",
+        "name": "Send-string-arduino",
+        "serial": "9badf514cd4dbf69",
+        "x": 760,
+        "y": 640,
+        "wires": []
+    }
+]
